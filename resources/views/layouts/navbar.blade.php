@@ -12,6 +12,24 @@
         {{-- CSS --}}
         <link rel="stylesheet" href={{ url("css/landingpage.css") }}>
 
+        <!-- UIkit CSS -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.14.3/dist/css/uikit.min.css" />
+
+        <!-- UIkit JS -->
+        <script src="https://cdn.jsdelivr.net/npm/uikit@3.14.3/dist/js/uikit.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/uikit@3.14.3/dist/js/uikit-icons.min.js"></script>
+        <style>
+            .box-locations, .box-events, .box-city
+            {
+                font-size: 12px
+            }
+            .box p
+            {
+                margin-top: 0;
+                margin-bottom: 8px
+            }
+        </style>
+
         {{-- Icon --}}
         <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
 
@@ -28,7 +46,7 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0"></ul>
-                    <ul class="navbar-nav mb-2 mb-lg-0">
+                    <ul class="navbar-nav mb-2 mb-lg-0 mt-0">
                         <li class="nav-item">
                             <button type="button" class="btn btn-outline-dark nav-btn me-3" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Masuk</button>
                         </li>
@@ -89,6 +107,33 @@
         </div>
 
         {{-- Close Modal Masuk --}}
+        {{-- Open Verify Email --}}
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary email d-none" data-bs-toggle="modal" data-bs-target="#email">
+            Launch static backdrop modal
+        </button>
+        
+        <!-- Modal -->
+        <div class="modal fade" id="email" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title fs-5" id="staticBackdropLabel"><i class='bx bx-error-circle fs-5'></i>ALERT!!</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p class="mb-0 mt-0 fs-6"><strong> Silahkan pencet link verifikasi yang terdapat di email anda </strong>, <br>Jika belum menerima link, silakan tunggu dalam 9 detik</p>
+                    </div>
+                    <div class="modal-footer">
+                        <form action="" method="">
+                            @csrf
+                            <button type="submit" class="btn btn-dark">Dapatkan email</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{-- Close Verify Email --}}
         <!-- Bootstrap JavaScript Libraries -->
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
@@ -98,5 +143,11 @@
 
         {{-- JS --}}
         <script src={{ url("js/modal.js") }}></script>
+        <script>
+            let email = document.querySelector(".email")
+            setTimeout(() => {
+                email.click()
+            }, 2000);
+        </script>
     </body>
 </html>

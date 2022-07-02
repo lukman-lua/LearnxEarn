@@ -1,0 +1,71 @@
+
+/* Box */
+.box
+{
+    position: relative;
+}
+
+.box-status, .events, .location, .city
+{
+    font-size: 14px;
+}
+
+.box p
+{
+    margin-bottom: 8px;
+}
+
+.text-hijau
+{
+    color: #24CC24;
+}
+
+/* Boxxx */
+.boxxx-img
+{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    padding: 10px;
+}
+
+.boxxx p
+{
+    font-size: 10px;
+    margin-bottom: 0;
+}
+
+/* Profile */
+.profile-img
+{
+    width: 120px;
+    height: 120px;
+}
+
+.btn-change
+{
+    border-bottom: 2px rgba(0, 0, 0, .5) solid;
+    border-radius: 0;
+}
+
+.aktiv
+{
+    border-bottom: 2px rgba(0, 0, 0, 1) solid;
+}
+
+.profilData input, .profilPass input, .tambah input, .tambah textarea, .tambah select
+{
+    border: 1px solid #000;
+}
+
+.fit-content
+{
+    width: fit-content;
+}
+
+@media screen and (max-width: 768px) {
+    .mahasiswa-events .col-md-2
+    {
+        width: 50%;
+    }
+}
