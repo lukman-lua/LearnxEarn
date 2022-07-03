@@ -64,3 +64,11 @@ Route::get('/organisasi/tambah_kegiatan', function () {
 Route::get('/organisasi/profile', function () {
     return view('organisasi/profil');
 })->name("profilOrganisasi");
+
+Route::get('/organisasi/detail', function () {
+    return view('organisasi/detailProfil');
+});
+
+Route::get('/mahasiswa/detail', function () {
+    return view('mahasiswa/detailProfil');
+});
