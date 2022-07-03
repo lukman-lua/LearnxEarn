@@ -35,8 +35,9 @@
                                 <img src={{ url("images/login-1.png") }} alt="" class="boxxx-img border border-dark me-1">
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="#">Profil saya</a></li>
-                                <li><a class="dropdown-item" href="#">Proyek saya</a></li>
+                                <li><a class="dropdown-item" href={{ route("mahasiswa") }}>Beranda</a></li>
+                                <li><a class="dropdown-item" href={{ route("profilMahasiswa") }}>Profil saya</a></li>
+                                <li><a class="dropdown-item" href={{ route("myproyekMahasiswa") }}>Proyek saya</a></li>
                                 <li><a class="dropdown-item" href="#">Kegiatan yang disimpan</a></li>
                                 <li><hr class="dropdown-divider"></li>
                                 <li><a class="dropdown-item" href="#">Keluar</a></li>

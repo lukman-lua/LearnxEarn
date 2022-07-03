@@ -9,7 +9,7 @@
                 </div>
                 <div class="row justify-content-between mb-3 mahasiswa-events">
                     <div class="col-md-2 mb-3">
-                        <a href="" class="btn btn-dark text-light">Tambah Proyek</a>
+                        <a href={{ route("AddMyproyekMahasiswa") }} class="btn btn-dark text-light">Tambah Proyek</a>
                     </div>
                     <div class="col-md-2 mb-3">
                         <div class="dropdown">
@@ -112,7 +112,7 @@
                                 <p>Jakarta</p>
                             </div>
                             <div class="boxx-actions d-flex mb-3">
-                                <a href="" class="btn btn-outline-dark d-flex align-items-center me-3">
+                                <a href="{{ route("updateMyproyekMahasiswa") }}" class="btn btn-outline-dark d-flex align-items-center me-3">
                                     Edit Proyek
                                 </a>
                                 <a href="" class="btn btn-danger d-flex align-items-center me-3">
