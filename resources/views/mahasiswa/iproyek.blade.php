@@ -9,18 +9,7 @@
                 </div>
                 <div class="row justify-content-between mb-3 mahasiswa-events">
                     <div class="col-md-2 mb-3">
-                        <div class="dropdown">
-                            <button class="btn btn-outline-dark dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                                <i class='bx bx-calendar-alt fs-5'></i>Jenis Kegiatan
-                            </button>
-                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                <li><a class="dropdown-item" href="#">Organisai</a></li>
-                                <li><a class="dropdown-item" href="#">Magang</a></li>
-                                <li><a class="dropdown-item" href="#">Proyek</a></li>
-                                <li><a class="dropdown-item" href="#">Beasiswa</a></li>
-                                <li><a class="dropdown-item" href="#">Kerja Paruh Waktu</a></li>
-                            </ul>
-                        </div>
+                        <a href="" class="btn btn-dark text-light">Tambah Proyek</a>
                     </div>
                     <div class="col-md-2 mb-3">
                         <div class="dropdown">

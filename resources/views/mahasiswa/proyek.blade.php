@@ -41,7 +41,7 @@
                     </div>
                 </div>
                 <div class="row align-items-stretch mb-3">
-                    <div class="col-md-3 overflow-scroll boxSatu">
+                    <div class="col-md-3 overflow-scroll doxSatu">
                         {{-- Open Looping --}}
                         <div class="box border border-dark rounded-4 p-3 mb-2">
                             <div class="box-status">
@@ -69,38 +69,9 @@
                             </div>
                         </div>
                         {{-- Close Looping --}}
-                        {{-- Open Boleh dihapus --}}
-                        @for ($i = 0; $i <= 4; $i++)
-                        <div class="box border border-dark rounded-4 p-3 mb-2">
-                            <div class="box-status">
-                                {{-- Buka --}}
-                                <p class="text-hijau mb-0">Tersedia</p>
-                                {{-- Tutup --}}
-                                {{-- <p class="text-danger mb-0">Tidak Tersedia/p> --}}
-                            </div>
-                            <div class="box-title fw-bold">
-                                <p>Tanaman hidroponik berbasis IoT</p>
-                            </div>
-                            <div class="box-body">
-                                <div class="events d-flex">
-                                    <i class='bx bx-user-circle fs-4'></i>
-                                    <p>Fadhil</p>
-                                </div>
-                                <div class="location d-flex">
-                                    <i class='bx bx-category-alt fs-4'></i>
-                                    <p>Internet of Things</p>
-                                </div>
-                                <div class="city d-flex">
-                                    <i class='bx bx-map fs-4'></i>
-                                    <p>Jakarta</p>
-                                </div>
-                            </div>
-                        </div>
-                        @endfor
-                        {{-- Close Boleh dihapus --}}
                     </div>
                     <div class="col-md-6">
-                        <div class="boxx border border-dark rounded-4 p-3 boxDua">
+                        <div class="boxx border border-dark rounded-4 p-3 doxDua">
                             <div class="boxx-status">
                                 {{-- Buka --}}
                                 <p class="text-hijau">Tersedia</p>
@@ -190,7 +161,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-3 boxTiga">
+                    <div class="col-md-3 doxTiga">
                         <div class="boxxx border border-dark rounded-4 p-3">
                             <div class="boxxx-recomendation">
                                 <p class="fw-bold fs-6">Rekomendasi untuk kamu</p>
@@ -211,17 +182,6 @@
                                     </div>
                                 </div>
                                 {{-- Close Looping --}}
-                                {{-- Open boleh dihapus --}}
-                                @for ($i = 0; $i <= 5; $i++)
-                                <div class="boxxx-user d-flex align-items-center mb-3">
-                                    <img src={{ url("images/login-1.png") }} alt="" class="boxxx-img border border-dark me-1 text-wrap">
-                                    <div class="user">
-                                        <p class="fw-bold fs-6">Rifda Sasmi Zahra</p>
-                                        <p>rifdasasmizahra83@gmail.com</p>
-                                    </div>
-                                </div>
-                                @endfor
-                                {{-- Close boleh dihapus --}}
                             </div>
                         </div>
                     </div>
