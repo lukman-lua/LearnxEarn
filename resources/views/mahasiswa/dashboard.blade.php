@@ -158,15 +158,16 @@
                     </div>
                     <div class="col-md-3 boxTiga">
                         <div class="boxxx border border-dark rounded-4 p-3">
-                            <div class="boxxx-user d-flex align-items-center mb-3">
-                                <img src={{ url("images/login-1.png") }} alt="" class="boxxx-img border border-dark me-1">
-                                <div class="user">
-                                    <p class="fw-bold fs-6">Rifda Sasmi Zahra</p>
-                                    <p>rifdasasmizahra83@gmail.com</p>
-                                </div>
-                            </div>
                             <div class="boxxx-recomendation">
-                                <p style="font-size: 12px">rekomendasi untuk kamu</p>
+                                <p class="fw-bold fs-6">Rekomendasi untuk kamu</p>
+                                <form action="" class="mb-3">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control">
+                                        <span class="input-group-text">
+                                            <i class='bx bx-search'></i>
+                                        </span>
+                                    </div>
+                                </form>
                                 {{-- Open Looping --}}
                                 <div class="boxxx-user d-flex align-items-center mb-3">
                                     <img src={{ url("images/login-1.png") }} alt="" class="boxxx-img border border-dark me-1 text-wrap">

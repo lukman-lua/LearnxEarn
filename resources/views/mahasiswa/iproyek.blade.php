@@ -99,7 +99,7 @@
                         @endfor
                         {{-- Close Boleh dihapus --}}
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-9">
                         <div class="boxx border border-dark rounded-4 p-3 boxDua">
                             <div class="boxx-status">
                                 {{-- Buka --}}
@@ -123,17 +123,11 @@
                                 <p>Jakarta</p>
                             </div>
                             <div class="boxx-actions d-flex mb-3">
-                                <a href="" class="btn btn-dark d-flex align-items-center me-3">
-                                    <i class='bx bxl-whatsapp fs-4'></i>
-                                    Hubungi saya
-                                </a>
                                 <a href="" class="btn btn-outline-dark d-flex align-items-center me-3">
-                                    <i class='bx bxs-user-detail fs-4'></i>
-                                    Detail proyek
+                                    Edit Proyek
                                 </a>
-                                <a href="" class="btn btn-outline-dark d-flex align-items-center">
-                                    <i class='bx bx-bookmark fs-4'></i>
-                                    Simpan
+                                <a href="" class="btn btn-danger d-flex align-items-center me-3">
+                                    Hapus Proyek
                                 </a>
                             </div>
                             <div class="boxx-body">
@@ -168,16 +162,10 @@
                                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                             </div>
                                             <div class="modal-body">
-                                                <div class="input-group">
-                                                    <input type="text" class="form-control">
-                                                    <span class="input-group-text">
-                                                        <i class='bx bx-plus'></i>
-                                                    </span>
-                                                </div>
                                                 <form action="" method="">
                                                     @csrf
                                                     <input type="text" name="" id="" class="form-control">
-                                                    <button type="submit" class="btn btn-dark mx-auto d-block">Tambah</button>
+                                                    <button type="submit" class="btn btn-dark mx-auto d-block mt-3">Tambah</button>
                                                 </form>
                                             </div>
                                         </div>
@@ -190,7 +178,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-3 boxTiga">
+                    <div class="col-md-3 boxTiga d-none">
                         <div class="boxxx border border-dark rounded-4 p-3">
                             <div class="boxxx-recomendation">
                                 <p class="fw-bold fs-6">Rekomendasi untuk kamu</p>

@@ -29,6 +29,10 @@ Route::get('/mahasiswa/project', function () {
     return view('mahasiswa/proyek');
 })->name("proyekMahasiswa");
 
+Route::get('/mahasiswa/myproject', function () {
+    return view('mahasiswa/iproyek');
+})->name("myproyekMahasiswa");
+
 Route::get('/mahasiswa/profile', function () {
     return view('mahasiswa/profil');
 })->name("profilMahasiswa");
