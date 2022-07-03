@@ -49,6 +49,14 @@ Route::get('/organisasi', function () {
     return view('organisasi/dashboard');
 })->name("organisasi");
 
+Route::get('/organisasi/myevent', function () {
+    return view('organisasi/ievent');
+})->name("myEventOrganisasi");
+
+Route::get('/organisasi/myevent/update', function () {
+    return view('organisasi/editEvent');
+})->name("updateMyEventOrganisasi");
+
 Route::get('/organisasi/tambah_kegiatan', function () {
     return view('organisasi/tambahEvents');
 })->name("tambahOrganisasi");

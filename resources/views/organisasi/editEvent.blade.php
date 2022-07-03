@@ -4,7 +4,7 @@
         {{-- Open Tambah --}}
         <section>
             <div class="container-lg tambah mt-3">
-                <p class="fs-3 text-center">TAMBAH KEGIATAN</p>
+                <p class="fs-3 text-center">EDIT KEGIATAN</p>
                 <div class="row justify-content-center">
                     <div class="col-md-7">
                         <form action="" method="">

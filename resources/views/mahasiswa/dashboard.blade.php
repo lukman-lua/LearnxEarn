@@ -44,8 +44,8 @@
         <section>
             <div class="container-lg mt-3">
                 <div class="row">
-                    <p class="fs-3">DAFTAR KEGIATAN</p>
-                    <p class="fs-5 fw-bold">Pilih jenis kegiatan</p>
+                    <p class="fs-3 fw-bold">DAFTAR KEGIATAN</p>
+                    <p class="fs-5">Pilih jenis kegiatan</p>
                 </div>
                 <div class="row justify-content-between mb-3 mahasiswa-events">
                     <div class="col-md-3 mb-3">

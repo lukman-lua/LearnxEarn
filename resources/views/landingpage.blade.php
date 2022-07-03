@@ -9,7 +9,7 @@
                     <div class="col-md-6">
                         <p class="fs-2 fw-normal">Temukan kegiatanmu dengan cepat, tepat, dan praktis!</p>
                         <p class="fs-6 fw-normal">Learn x Earn adalah platform untuk mahasiswa untuk memudahkan kamu mencari informasi seputar kegiatan seperti magang, kepanitiaan, dan sebagainya.</p>
-                        <button type="button" class="btn btn btn-dark section-1-btn px-3">Telusuri Kegiatan</button>
+                        <a href="{{ route("mahasiswa") }}" class="btn btn btn-dark section-1-btn px-3">Telusuri Kegiatan</a>
                     </div>
                     <div class="col-md-6">
                         <img src={{ url("images/section-1.png") }} alt="" class="img-fluid">
@@ -19,24 +19,6 @@
         </section>
 
         {{-- Close Section 1 --}}
-        {{-- Open Section 2 --}}
-
-        <section>
-            <div class="container-lg">
-                <div class="row align-items-center mt-3">
-                    <div class="col-md-6">
-                        <img src={{ url("images/section-2.png") }} alt="" class="img-fluid">
-                    </div>
-                    <div class="col-md-6">
-                        <p class="fs-2 fw-normal">Masih bingung dengan siapa kolaborasi proyek?</p>
-                        <p class="fs-6 fw-normal">Kamu bisa lebih mudah mencari collaborator proyek di Learn x Earn!</p>
-                        <button type="button" class="btn btn btn-dark section-1-btn px-3">Telusuri Proyek</button>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        {{-- Close Section 2 --}}
         {{-- Open Section 3 --}}
 
         <section class="my-5 pt-5">
@@ -77,9 +59,9 @@
         {{-- Open Section 4 --}}
 
         <section>
-            <div class="container-lg my-3">
+            <div class="container-lg my-5">
                 <div class="row">
-                    <p class="text-center fs-3 fw-bold">Kegiatan yang baru tersedia</p>
+                    <p class="text-center fs-3 fw-bold">Kegiatan baru yang tersedia</p>
                 </div>
                 <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slider>
 
@@ -107,6 +89,54 @@
                                 <div class="d-flex align-items-center box-city">
                                     <i class='bx bx-map fs-4 text-dark'></i>
                                     <p class="text-dark">Jakarta</p>
+                                </div>
+                            </div>
+                            <div class="uk-position-center uk-panel"></div>
+                        </li>
+                        @endfor
+                    </ul>
+                    <a class="uk-position-center-left uk-position-small uk-hidden-hover text-dark" href="#" uk-slidenav-previous uk-slider-item="previous"></a>
+                    <a class="uk-position-center-right uk-position-small uk-hidden-hover text-dark" href="#" uk-slidenav-next uk-slider-item="next"></a>
+                </div>
+            </div>
+        </section>
+
+        {{-- Close Section 4 --}}
+        {{-- Open Section 4 --}}
+
+        <section>
+            <div class="container-lg my-5">
+                <div class="row">
+                    <p class="text-center fs-3 fw-bold">Proyek baru yang ditambahkan</p>
+                </div>
+                <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slider>
+
+                    <ul class="uk-slider-items uk-child-width-1-2 uk-child-width-1-3@s uk-child-width-1-4@m">
+                        @for ($i = 0; $i < 8; $i++)
+                        <li>
+                            <div class="box border border-1 rounded-3 p-3 me-3">
+                                <div class="box-status">
+                                    {{-- Buka --}}
+                                    <p class="text-success mb-0">Tersedia</p>
+                                    {{-- Tutup --}}
+                                    {{-- <p class="text-danger mb-0">Tidak Tersedia/p> --}}
+                                </div>
+                                <div class="box-title fw-bold text-dark">
+                                    <p>Tanaman hidroponik berbasis IoT</p>
+                                </div>
+                                <div class="box-body">
+                                    <div class="events d-flex">
+                                        <i class='bx bx-user-circle fs-4 text-dark'></i>
+                                        <p class="text-dark">Fadhil</p>
+                                    </div>
+                                    <div class="location d-flex">
+                                        <i class='bx bx-category-alt fs-4 text-dark'></i>
+                                        <p class="text-dark">Internet of Things</p>
+                                    </div>
+                                    <div class="city d-flex">
+                                        <i class='bx bx-map fs-4 text-dark'></i>
+                                        <p class="text-dark">Jakarta</p>
+                                    </div>
                                 </div>
                             </div>
                             <div class="uk-position-center uk-panel"></div>
@@ -165,8 +195,44 @@
         {{-- Close Section 5 --}}
         {{-- Open Section 6 --}}
         <section>
-            <div class="container-fluid bg-dark pt-5" style="height: 295px">
-                <p class="fs-2 text-light ms-5">Learn x Earn</p>
+            <div class="container-fluid bg-dark py-5">
+                <div class="container-lg">
+                    <div class="row align-items-center justify-content-evenly">
+                        <div class="col-md-4">
+                            <p class="fs-4 text-light fw-bold">
+                                <img src="{{ url("images/logo.png") }}" alt="" class="img-fluid ratio ratio-1x1" style="width: 50px;">
+                                Learn x Earn
+                            </p>
+                            <p class="fs-6 text-light">
+                                Pusat: <br>
+                                Jl. Situjuh 18, Kelurahan Jati, Kecamatan Padang Timur, Kota Padang, Sumatera Barat
+                            </p>
+                            <span class="text-light">
+                                <i class='bx fs-3 me-3 bxl-instagram-alt'></i>
+                                <i class='bx fs-3 me-3 bxl-twitter'></i>
+                                <i class='bx fs-3 me-3 bxl-facebook-square'></i>
+                            </span>
+                        </div>
+                        <div class="col-md-4">
+                            <p class="fs-4 text-light fw-bold">Tentang Kami</p>
+                            <p class="fs-6 text-light">
+                                Learn x Earn adalah platform untuk mahasiswa untuk memudahkan mahasiswa dalam mencari informasi seputar kegiatan seperti magang, kepanitiaan, dan sebagainya.
+                            </p>
+                        </div>
+                        <div class="col-md-3">
+                            <p class="fs-4 text-light fw-bold">Hubungi Kami</p>
+                            <span class="text-light fs-6">
+                                <i class='bx bxs-phone-call'></i>
+                                (0812) 3456789
+                            </span>
+                            <br>
+                            <span class="text-light fs-6">
+                                <i class='bx bxs-phone-call'></i>
+                                (0812) 3456789
+                            </span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
         {{-- Close Section 6 --}}

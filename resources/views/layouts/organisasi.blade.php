@@ -35,8 +35,9 @@
                                 <i class='bx bx-user-circle fs-4'></i>
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="#">Profil Organisasi</a></li>
-                                <li><a class="dropdown-item" href="#">Kegiatan Organisasi</a></li>
+                                <li><a class="dropdown-item" href="{{ route("organisasi") }}">Beranda</a></li>
+                                <li><a class="dropdown-item" href="{{ route("profilOrganisasi") }}">Profil Organisasi</a></li>
+                                <li><a class="dropdown-item" href="{{ route("myEventOrganisasi") }}">Kegiatan Organisasi</a></li>
                                 <li><a class="dropdown-item" href="#">Kegiatan yang disimpan</a></li>
                                 <li><hr class="dropdown-divider"></li>
                                 <li><a class="dropdown-item" href="#">Keluar</a></li>
