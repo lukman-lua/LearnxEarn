@@ -40,7 +40,7 @@
 
         <nav class="navbar navbar-expand-lg bg-light nav-height">
             <div class="container-lg bg-light">
-                <a class="navbar-brand fw-bold" href="#">Learn x Earn</a>
+                <a class="navbar-brand fw-bold" href={{ route("landingpage") }}>Learn x Earn</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -68,7 +68,7 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title" id="staticBackdropLabel">Masuk</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        <button type="button" class="btn-close login-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
                         <form action="">
@@ -81,7 +81,7 @@
                                 <i class="bx bx-show position-absolute top-50 end-0 translate-middle fs-4 mata"></i>
                             </div>
                             <div class="d-flex flex-row-reverse mb-3">
-                                <a href="" class="text-decoration-none" style="font-size: 12px">Lupa Password?</a>
+                                <button class="btn btn-light btnLupa" style="font-size: 12px">Lupa Password?</button>
                             </div>
                             <div class="mb-3">
                                 <button type="submit" class="btn btn-dark w-100">Masuk</button>
@@ -107,8 +107,33 @@
         </div>
 
         {{-- Close Modal Masuk --}}
-        {{-- Open Verify Email --}}
+        {{-- Open Lupa Password --}}
         <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary lupaPassword d-none" data-bs-toggle="modal" data-bs-target="#lupaPassword">
+            Launch static backdrop modal
+        </button>
+        
+        <!-- Modal -->
+        <div class="modal fade" id="lupaPassword" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title fs-5" id="staticBackdropLabel"><i class='bx bx-error-circle fs-5'></i>ALERT!!</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="" method="">
+                            @csrf
+                            <input type="email" name="" placeholder="Masukan email">
+                            <button type="submit" class="btn btn-dark">Dapatkan email</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{-- Close Lupa Password --}}
+        {{-- Open Verify Email --}}
+        {{-- <!-- Button trigger modal -->
         <button type="button" class="btn btn-primary email d-none" data-bs-toggle="modal" data-bs-target="#email">
             Launch static backdrop modal
         </button>
@@ -132,7 +157,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
         {{-- Close Verify Email --}}
         <!-- Bootstrap JavaScript Libraries -->
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
@@ -144,10 +169,21 @@
         {{-- JS --}}
         <script src={{ url("js/modal.js") }}></script>
         <script>
-            let email = document.querySelector(".email")
-            setTimeout(() => {
-                email.click()
-            }, 2000);
+            // let email = document.querySelector(".email")
+            // setTimeout(() => {
+            //     email.click()
+            // }, 2000);
+
+            let lupaPassword = document.querySelector(".lupaPassword"),
+                loginClose = document.querySelector(".login-close"),
+                btnLupa = document.querySelector(".btnLupa")
+            
+            btnLupa.onclick = () =>{
+                loginClose.click()
+                lupaPassword.click()
+            }
+            
+            
         </script>
     </body>
 </html>

@@ -55,11 +55,29 @@
                             </div>
                             <div class="mb-3">
                                 <label for="Hobi" class="form-label">Hobi</label>
-                                <input type="text" class="form-control" name="" id="Hobi" placeholder="Hobi">
+                                <div class="d-flex d-hobi">
+                                </div>
+                                <div class="input-group">
+                                    <input type="text" class="form-control input-hobi">
+                                    <span class="input-group-text border-dark btn-add-hobi">
+                                        <i class='bx bx-plus'></i>
+                                    </span>
+                                </div>
+                                <input type="text" class="form-control hobi" name="" id="Hobi" placeholder="Hobi" hidden>
+                                <small>Tekan kembali hobi, jika ada salah</small>
                             </div>
                             <div class="mb-3">
                                 <label for="Keahlian" class="form-label">Keahlian</label>
-                                <input type="text" class="form-control" name="" id="Keahlian" placeholder="Keahlian">
+                                <div class="d-flex d-ahli">
+                                </div>
+                                <div class="input-group">
+                                    <input type="text" class="form-control input-ahli">
+                                    <span class="input-group-text border-dark btn-add-ahli">
+                                        <i class='bx bx-plus'></i>
+                                    </span>
+                                </div>
+                                <input type="text" class="form-control ahli" name="" id="Keahlian" placeholder="Keahlian" hidden>
+                                <small>Tekan kembali keahlian, jika ada salah</small>
                             </div>
                             <div class="mb-3">
                                 <button type="submit" class="btn btn-dark">Simpan</button>
@@ -109,6 +127,70 @@
                 btnData.classList.remove("aktiv")
                 btnPass.classList.add("aktiv")
             }
+
+            let divHobi = document.querySelector(".d-hobi"),
+                inputHobi = document.querySelector(".input-hobi"),
+                btnAddHobi = document.querySelector(".btn-add-hobi"),
+                hobi = document.querySelector(".hobi"),
+                arr = []
+            
+            btnAddHobi.onclick = () =>{
+                let button = document.createElement("BUTTON"),
+                    span = document.createElement("SPAN")
+                button.type = "button"
+                button.classList.add("btn", "btn-secondary", "rounded-pill", "p-1", "px-3", "text-light", "mb-3", "btn-hobi", "me-1")
+                if(inputHobi.value == ""){
+                    console.log("Silahkan isi terlebih dahulu")
+                }else{
+                    button.innerHTML = inputHobi.value
+                    button.appendChild(span)
+                    divHobi.appendChild(button)
+                    arr.push(inputHobi.value)
+                    hobi.value = arr
+                    inputHobi.value = ""
+                }
+                let btnHobi = document.querySelectorAll(".btn-hobi span")
+                for(let i = 0; i < btnHobi.length; i++){
+                    btnHobi[i].parentElement.onclick = (e) =>{
+                        btnHobi[i].parentElement.remove()
+                        arr = arr.slice(i+1)
+                        hobi.value = arr
+                    }
+                }
+            }
+
+            let divAhli = document.querySelector(".d-ahli"),
+                inputAhli = document.querySelector(".input-ahli"),
+                btnAddAhli = document.querySelector(".btn-add-ahli"),
+                ahli = document.querySelector(".ahli"),
+                arrr = []
+            
+            btnAddAhli.onclick = () =>{
+                let button = document.createElement("BUTTON"),
+                    span = document.createElement("SPAN")
+                button.type = "button"
+                button.classList.add("btn", "btn-secondary", "rounded-pill", "p-1", "px-3", "text-light", "mb-3", "btn-ahli", "me-1")
+                if(inputAhli.value == ""){
+                    console.log("Silahkan isi terlebih dahulu")
+                }else{
+                    button.innerHTML = inputAhli.value
+                    button.appendChild(span)
+                    divAhli.appendChild(button)
+                    arrr.push(inputAhli.value)
+                    ahli.value = arr
+                    inputAhli.value = ""
+                }
+                let btnAhli = document.querySelectorAll(".btn-ahli span")
+                for(let i = 0; i < btnAhli.length; i++){
+                    btnAhli[i].parentElement.onclick = (e) =>{
+                        btnAhli[i].parentElement.remove()
+                        arrr = arr.slice(i+1)
+                        ahli.value = arr
+                    }
+                }
+            }
+
+
         </script>
     
 @endsection
