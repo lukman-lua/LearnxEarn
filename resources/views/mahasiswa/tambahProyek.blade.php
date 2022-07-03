@@ -39,12 +39,15 @@
                             </div>
                             <div class="mb-3">
                                 <label for="Rincian kegiatan" class="form-label">Rincian kegiatan</label>
-                                <input type="text" class="form-control mb-2" name="" id="Rincian kegiatan" placeholder="Rincian kegiatan">
-                                <input type="text" class="form-control mb-2" name="" id="Rincian kegiatan" placeholder="Rincian kegiatan">
-                                <input type="text" class="form-control mb-2" name="" id="Rincian kegiatan" placeholder="Rincian kegiatan">
-                                <input type="text" class="form-control mb-2" name="" id="Rincian kegiatan" placeholder="Rincian kegiatan">
-                                <input type="text" class="form-control mb-2" name="" id="Rincian kegiatan" placeholder="Rincian kegiatan">
-                                <input type="text" class="form-control" name="" id="Rincian kegiatan" placeholder="Rincian kegiatan">
+                                <div class="d-flex d-rincian"></div>
+                                <div class="input-group ">
+                                    <input type="text" class="form-control input-rincian">
+                                    <span class="input-group-text border-dark btn-add-rincian">
+                                        <i class='bx bx-plus fs-4'></i>
+                                    </span>
+                                </div>
+                                <input type="text" class="form-control rincian" name="" id="Rincian kegiatan" placeholder="Rincian kegiatan" hidden>
+                                <small>Tekan kembali rincian, jika ada salah</small>
                             </div>
                             <div class="mb-3">
                                 <label for="Link Detail Kegiatan" class="form-label">Link Detail Kegiatan</label>
@@ -59,5 +62,40 @@
             </div>
         </section>
         {{-- Close Tambah --}}
+
+        <script>
+
+            let divRincian = document.querySelector(".d-rincian"),
+                inputRincian = document.querySelector(".input-rincian"),
+                btnAddRincian = document.querySelector(".btn-add-rincian"),
+                rincian = document.querySelector(".rincian"),
+                arr = []
+            
+            btnAddRincian.onclick = () =>{
+                let button = document.createElement("BUTTON"),
+                    span = document.createElement("SPAN")
+                button.type = "button"
+                button.classList.add("btn", "btn-secondary", "rounded-pill", "p-1", "px-3", "text-light", "mb-3", "btn-rincian", "me-1")
+                if(inputRincian.value == ""){
+                    console.log("Silahkan isi terlebih dahulu")
+                }else{
+                    button.innerHTML = inputRincian.value
+                    button.appendChild(span)
+                    divRincian.appendChild(button)
+                    arr.push(inputRincian.value)
+                    rincian.value = arr
+                    inputRincian.value = ""
+                }
+                let btnRincian = document.querySelectorAll(".btn-rincian span")
+                for(let i = 0; i < btnRincian.length; i++){
+                    btnRincian[i].parentElement.onclick = (e) =>{
+                        btnRincian[i].parentElement.remove()
+                        arr = arr.slice(i+1)
+                        rincian.value = arr
+                    }
+                }
+            }
+
+        </script>
     
 @endsection
