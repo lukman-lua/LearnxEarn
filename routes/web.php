@@ -21,9 +21,15 @@ Route::get('/registrasi', function () {
     return view('register');
 })->name("register");
 
+<<<<<<< HEAD
 Route::get('/verify', function () {
     return view('verify');
 })->name("verify");
+=======
+Route::get('/reset_password', function () {
+    return view('resetPassword');
+});
+>>>>>>> e8bd4a3058f285dd6fd9e8828e6a404d5cd23529
 
 Route::get('/mahasiswa', function () {
     return view('mahasiswa/dashboard');
