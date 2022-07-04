@@ -21,6 +21,10 @@ Route::get('/registrasi', function () {
     return view('register');
 })->name("register");
 
+Route::get('/verify', function () {
+    return view('verify');
+})->name("verify");
+
 Route::get('/mahasiswa', function () {
     return view('mahasiswa/dashboard');
 })->name("mahasiswa");
@@ -72,3 +76,4 @@ Route::get('/organisasi/detail', function () {
 Route::get('/mahasiswa/detail', function () {
     return view('mahasiswa/detailProfil');
 });
+
