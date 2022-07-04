@@ -162,9 +162,8 @@
                     <div class="modal-body">
                         <form action="{{ route("password.email") }}" method="post">
                             @csrf
-                            <input type="email" name="email" placeholder="Masukan email">
-                            <br><br>
-                            <button type="submit" class="btn btn-dark">Dapatkan email</button>
+                            <input type="email" name="email" placeholder="Masukan email" class="form-control mb-3">
+                            <button type="submit" class="btn btn-dark w-100">Dapatkan email</button>
                         </form>
                     </div>
                 </div>
