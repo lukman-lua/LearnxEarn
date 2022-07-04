@@ -28,17 +28,17 @@
                         </a>
                     </div>
                     <div class="col-md-2 mb-3">
-{{--                        <div class="dropdown">--}}
-{{--                            <button class="btn btn-outline-dark dropdown-toggle d-flex justify-content-between align-items-center w-100" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">--}}
-{{--                                <div>--}}
-{{--                                    <i class='bx bx-list-check fs-5'></i>Status--}}
-{{--                                </div>--}}
-{{--                            </button>--}}
-{{--                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">--}}
-{{--                                <li><a class="dropdown-item" href="#">Buka</a></li>--}}
-{{--                                <li><a class="dropdown-item" href="#">Tutup</a></li>--}}
-{{--                            </ul>--}}
-{{--                        </div>--}}
+                        <div class="dropdown">
+                            <button class="btn btn-outline-dark dropdown-toggle d-flex justify-content-between align-items-center w-100" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+                                <div>
+                                    <i class='bx bx-list-check fs-5'></i>Status
+                                </div>
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+                                <li><a class="dropdown-item" href="#">Buka</a></li>
+                                <li><a class="dropdown-item" href="#">Tutup</a></li>
+                            </ul>
+                        </div>
                     </div>
                     <div class="col-md-7 mb-3">
                         <div class="position-relative">
@@ -87,7 +87,7 @@
                     </div>
                     <div class="col-md-6 position-relative">
                         @foreach ($events as $event)
-                        <div class="boxx border border-dark rounded-4 p-3 boxDua position-absolute" style="width: 95%; min-height: 500px;">
+                        <div class="boxx border border-dark rounded-4 p-3 boxDua position-absolute" style="width: 95%;">
                             <div class="boxx-container">
                                 <div class="boxx-status">
                                     {{-- Buka --}}
@@ -184,7 +184,7 @@
                                         <p class="text-hijau mb-0">Tersedia</p>
                                     {{-- Tutup --}}
                                     @else
-                                        <p class="text-danger mb-0">Tidak Tersedia/p>
+                                        <p class="text-danger mb-0">Tidak Tersedia</p>
                                     @endif
                                 </div>
                                 <div class="dox-title fw-bold">
@@ -208,14 +208,14 @@
                             {{-- Close Looping --}}
                         @endforeach
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-6 position-relative border border-dark rounded-4" style="min-height: 400px">
                         @foreach($projets as $project)
-                        <div class="doxx border border-dark rounded-4 p-3 doxDua">
+                        <div class="doxx  p-3 doxDua position-absolute">
                             <div class="doxx-status">
                                 @if ($project["status"] == "Buka")
                                     <p class="text-hijau mb-0">Tersedia</p>
                                 @else
-                                    <p class="text-danger mb-0">Tidak Tersedia/p>
+                                    <p class="text-danger mb-0">Tidak Tersedia</p>
                                 @endif
                             </div>
                             <div class="doxx-title fw-bold">
@@ -349,6 +349,27 @@
                             boxx[j].classList.add("d-none")
                         }else{
                             boxx[j].classList.remove("d-none")
+                        }
+                    }
+                }
+            }
+
+            let dox = document.querySelectorAll(".dox"),
+                doxx = document.querySelectorAll(".doxx")
+
+            for(let i = 0; i < dox.length; i++){
+                if(i != 0){
+                    doxx[i].classList.add("d-none")
+                }
+            }
+
+            for(let i = 0; i < dox.length; i++){
+                dox[i].onclick = () =>{
+                    for(let j = 0; j < dox.length; j++){
+                        if(j != i){
+                            doxx[j].classList.add("d-none")
+                        }else{
+                            doxx[j].classList.remove("d-none")
                         }
                     }
                 }

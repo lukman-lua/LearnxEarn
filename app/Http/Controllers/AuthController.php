@@ -11,6 +11,7 @@ use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
 {
@@ -18,6 +19,23 @@ class AuthController extends Controller
     public function registerView(Request $request): Factory|View|Application
     {
         return view('auth.register');
+    }
+
+    public function resetPassword(Request $request){
+        $validate = $request->validate([
+            'new_password' => 'required|min:5|max:20',
+            'confirm_password' => 'required|min:5|max:20',
+        ]);
+
+        if ($validate['new_password'] == $validate['confirm_password']) {
+            User::where('id_user', 1)->first()->fill([
+                'password' => bcrypt($validate['new_password'])
+            ])->save();
+        }
+        return redirect()->route('landingpage')->with([
+            "status"=>"true",
+            "message"=>"Password berhasil diubah"
+        ]);
     }
 
     public function register(Request $request): RedirectResponse

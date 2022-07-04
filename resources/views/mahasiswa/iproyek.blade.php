@@ -9,7 +9,7 @@
                 </div>
                 <div class="row justify-content-between mb-3 mahasiswa-events">
                     <div class="col-md-2 mb-3">
-                        <a href="{{ route("add_eventView") }}" class="btn btn-dark text-light">Tambah Proyek</a>
+                        <a href="{{ route("add_projectView") }}" class="btn btn-dark text-light">Tambah Proyek</a>
                     </div>
                     <div class="col-md-2 mb-3">
                         <div class="dropdown">
@@ -43,7 +43,7 @@
                                         <p class="text-hijau mb-0">Tersedia</p>
                                         {{-- Tutup --}}
                                     @else
-                                        <p class="text-danger mb-0">Tidak Tersedia/p>
+                                        <p class="text-danger mb-0">Tidak Tersedia</p>
                                     @endif
                                 </div>
                                 <div class="dox-title fw-bold">
@@ -77,7 +77,7 @@
                                 @if ($project["status"] == "Buka")
                                     <p class="text-hijau mb-0">Tersedia</p>
                                 @else
-                                    <p class="text-danger mb-0">Tidak Tersedia/p>
+                                    <p class="text-danger mb-0">Tidak Tersedia</p>
                                 @endif
                             </div>
                             <div class="boxx-title fw-bold">

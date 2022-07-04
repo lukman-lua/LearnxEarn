@@ -11,7 +11,7 @@ class EventController extends Controller
 {
     public function index(Request $request){
         $user = $request->user();
-        $events = Event::all();
+        $events = $user->project()->get();
         return view('organisasi.ievent')
             ->with([
                 "user"=>$user,
@@ -21,7 +21,7 @@ class EventController extends Controller
 
     public function addView(Request $request){
         $user = $request->user();
-        $events = Event::all();
+        $events = $user->project()->get();
         return view('organisasi.tambahEvents')
             ->with([
             'user' => $user,

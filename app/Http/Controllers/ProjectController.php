@@ -10,7 +10,7 @@ class ProjectController extends Controller
 {
     public function index(Request $request){
         $user = $request->user();
-        $projects = Project::all();
+        $projects = $user->project()->get();
         return view('mahasiswa.iproyek')->with([
             'user' => $user,
             "projects"=>$projects,
@@ -23,7 +23,7 @@ class ProjectController extends Controller
             "search"=>"required"
         ]);
         $find = $validate["search"];
-        $projects = Project::query()
+        $projects = Project::query()->where("id_user", $user->id_user)
             ->where('tittle', 'LIKE', "%{$find}%")
             ->orWhere('type', 'LIKE', "%{$find}%")
             ->orWhere('location', 'LIKE', "%{$find}%")

@@ -27,7 +27,7 @@ class ProfileController extends Controller
                     'user' => $user,
                     'profile' => $profile,
                     'hobi'=>$profile->hobi ?? "[]",
-                    'keahlian'=>$profile->keahlian
+                    'keahlian'=>$profile->keahlian ?? "[]"
                 ]);
         }
         $profile = $user->organisasi;

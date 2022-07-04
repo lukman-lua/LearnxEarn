@@ -7,18 +7,19 @@
                 <div class="row justify-content-center">
                     <div class="col-md-5">
                         <h3 class="text-center">Reset Password</h3>
-                        <form action="" method="">
+                        <form action="{{ route("resetPassword") }}" method="post">
+                            @csrf
                             <div class="mb-3">
                                 <label for="password" class="form-label">Password Baru</label>
                                 <div class="position-relative">
-                                    <input type="password" class="form-control mata2Input" name="" id="password" placeholder="Password">
+                                    <input type="password" class="form-control mata2Input" name="new_password" id="password" placeholder="Password">
                                     <i class="bx bx-show position-absolute top-50 end-0 translate-middle fs-4 mata2"></i>
                                 </div>
                             </div>
                             <div class="mb-3">
                                 <label for="password" class="form-label">Konfirmasi Password</label>
                                 <div class="position-relative">
-                                    <input type="password" class="form-control mata3Input" name="" id="password" placeholder="Konfirmasi password">
+                                    <input type="password" class="form-control mata3Input" name="confirm_password" id="password" placeholder="Konfirmasi password">
                                     <i class="bx bx-show position-absolute top-50 end-0 translate-middle fs-4 mata3"></i>
                                 </div>
                             </div>
