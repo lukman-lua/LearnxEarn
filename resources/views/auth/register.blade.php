@@ -39,21 +39,21 @@
                                 <label for="password" class="form-label">Password</label>
                                 <div class="position-relative">
                                     <input required type="password" class="form-control mata2Input" name="password" id="password" placeholder="Password">
-                                    @error('password')
-                                        <div class="alert alert-danger">{{ $message }}</div>
-                                    @enderror
                                     <i class="bx bx-show position-absolute top-50 end-0 translate-middle fs-4 mata2"></i>
                                 </div>
+                                @error('password')
+                                    <div class="alert alert-danger">{{ $message }}</div>
+                                @enderror
                             </div>
                             <div class="mb-3">
                                 <label for="password" class="form-label">Konfirmasi Password</label>
                                 <div class="position-relative">
                                     <input required type="password" class="form-control mata3Input" name="re-password" id="password" placeholder="Konfirmasi password">
-                                    @error('re-password')
-                                        <div class="alert alert-danger">{{ $message }}</div>
-                                    @enderror
                                     <i class="bx bx-show position-absolute top-50 end-0 translate-middle fs-4 mata3"></i>
                                 </div>
+                                @error('re-password')
+                                    <div class="alert alert-danger">{{ $message }}</div>
+                                @enderror
                             </div>
                             <div class="mb-3">
                                 <button type="submit" class="btn btn-dark w-100">Daftar</button>

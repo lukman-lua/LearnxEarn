@@ -13,6 +13,9 @@
         <link rel="stylesheet" href={{ url("css/landingpage.css") }}>
         <link rel="stylesheet" href={{ url("css/mahasiswa.css") }}>
 
+        {{-- Icon --}}
+        <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+
         <!-- UIkit CSS -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.14.3/dist/css/uikit.min.css" />
 
@@ -102,14 +105,18 @@
                                 <input required type="email" class="form-control" placeholder="Email" name="email" value="{{ old('email') }}">
                                 @error('email')
                                     <div class="alert alert-danger">{{ $message }}</div>
-                                @enderror<br><br>
+                                    <br><br>
+                                @enderror
                             </div>
-                            <div class="mb-3 position-relative">
-                                <input required type="password" class="form-control mataInput" placeholder="Password" name="password">
+                            <div class="mb-3">
+                                <div class="position-relative">
+                                    <input required type="password" class="form-control mataInput" placeholder="Password" name="password">
+                                    <i class="bx bx-show position-absolute top-50 end-0 translate-middle fs-4 mata"></i>
+                                </div>
                                 @error('password')
                                     <div class="alert alert-danger">{{ $message }}</div>
-                                @enderror<br><br>
-                                <i class="bx bx-show position-absolute top-50 end-0 translate-middle fs-4 mata"></i>
+                                    <br><br>
+                                @enderror
                             </div>
                             <div class="d-flex flex-row-reverse mb-3">
                                 <button class="btn btn-light btnLupa" style="font-size: 12px">Lupa Password?</button>
