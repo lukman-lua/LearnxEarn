@@ -12,8 +12,8 @@
                         <p class="fw-bold mb-0">
                             Silahkan pencet link verifikasi yang terdapat pada email anda 
                         </p>
-                        <p class="mt-0">Jika belum menerima link, silahkan tunggu dalam <span></span></p>
-                        <button class="btn btn-dark" type="button">Dapatkan link</button>
+                        <p class="mt-0 mb-3">Jika belum menerima link, silahkan tunggu dalam <span id="countdown">60 detik</span></p>
+                        <button class="btn btn-dark btnLink" type="button" disabled>Dapatkan link</button>
                     </div>
                 </div>
             </div>
@@ -22,9 +22,19 @@
 
     {{-- Close Verify --}}
     <script>
-        setTimeout(() => {
+        let countdown = document.getElementById("countdown"),
+            btnLink = document.querySelector(".btnLink"),
+            i = 59
+        setInterval(() => {
             
-        }, 59000);
+            countdown.innerHTML = i + " detik"
+            i--
+            if ( i <= 0){
+                countdown.innerHTML = "0 detik"
+                btnLink.removeAttribute("disabled",'')
+            }
+
+        }, 1000);
     </script>
     
 @endsection
