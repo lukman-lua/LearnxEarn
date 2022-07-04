@@ -9,7 +9,7 @@
                 </div>
                 <div class="row justify-content-between mb-3 mahasiswa-events">
                     <div class="col-md-3 mb-3">
-                        <a href={{ route("tambahOrganisasi") }} class="btn btn-dark text-light">Tambah Kegiatan</a>
+                        <a href={{ route("add_eventView") }} class="btn btn-dark text-light">Tambah Kegiatan</a>
                     </div>
                     <div class="col-md-2 mb-3">
                         <div class="dropdown">
@@ -31,81 +31,62 @@
                 </div>
                 <div class="row align-items-stretch mb-3">
                     <div class="col-md-3 overflow-scroll boxSatu">
-                        {{-- Open Looping --}}
-                        <div class="box border border-dark rounded-4 p-3 mb-2">
-                            <div class="box-status">
-                                {{-- Buka --}}
-                                <p class="text-success mb-0">Pendaftaran dibuka</p>
-                                {{-- Tutup --}}
-                                {{-- <p class="text-danger mb-0">Pendaftaran ditutup</p> --}}
-                            </div>
-                            <div class="box-title">
-                                <p class="fw-bold text-dark">21st-Century Digital Educator (Guru Digital Abad 21)</p>
-                            </div>
-                            <div class="d-flex align-items-center box-events">
-                                <i class='bx bx-calendar-alt fs-4 text-dark'></i>
-                                <p class="text-dark">Magang</p>
-                            </div>
-                            <div class="d-flex align-items-center box-locations">
-                                <i class='bx bx-building-house fs-4 text-dark'></i>
-                                <p class="text-dark">21st-Century Digital Educator (Guru Digital Abad 21)</p>
-                            </div>
-                            <div class="d-flex align-items-center box-city">
-                                <i class='bx bx-map fs-4 text-dark'></i>
-                                <p class="text-dark">Jakarta</p>
-                            </div>
-                        </div>
                         {{-- Close Looping --}}
                         {{-- Open Boleh dihapus --}}
-                        @for ($i = 0; $i <= 4; $i++)
+                        @foreach($events as $event)
                         <div class="box border border-dark rounded-4 p-3 mb-2">
                             <div class="box-status">
-                                {{-- Buka --}}
-                                <p class="text-success mb-0">Pendaftaran dibuka</p>
-                                {{-- Tutup --}}
-                                {{-- <p class="text-danger mb-0">Pendaftaran ditutup</p> --}}
+                                @if ($event["status"] == "Buka")
+                                    <p class="text-hijau mb-0">Tersedia</p>
+                                    {{-- Tutup --}}
+                                @else
+                                    <p class="text-danger mb-0">Tidak Tersedia/p>
+                                @endif
                             </div>
                             <div class="box-title">
-                                <p class="fw-bold text-dark">21st-Century Digital Educator (Guru Digital Abad 21)</p>
+                                <p>{{ $event["tittle"] }}</p>
                             </div>
                             <div class="d-flex align-items-center box-events">
                                 <i class='bx bx-calendar-alt fs-4 text-dark'></i>
-                                <p class="text-dark">Magang</p>
+                                <p class="text-dark">{{ $event["type"] }}</p>
                             </div>
                             <div class="d-flex align-items-center box-locations">
                                 <i class='bx bx-building-house fs-4 text-dark'></i>
-                                <p class="text-dark">21st-Century Digital Educator (Guru Digital Abad 21)</p>
+                                <p class="text-dark">                            </div>
+                            </p>
                             </div>
                             <div class="d-flex align-items-center box-city">
                                 <i class='bx bx-map fs-4 text-dark'></i>
-                                <p class="text-dark">Jakarta</p>
+                                <p class="text-dark">{{ $event["city"] }}</p>
                             </div>
                         </div>
-                        @endfor
+                    @endforeach
                         {{-- Close Boleh dihapus --}}
                     </div>
                     <div class="col-md-9">
+                        @foreach($events as $event)
                         <div class="boxx border border-dark rounded-4 p-3 boxDua">
                             <div class="boxx-status">
-                                {{-- Buka --}}
-                                <p class="text-success mb-0">Pendaftaran dibuka</p>
-                                {{-- Tutup --}}
-                                {{-- <p class="text-danger mb-0">Pendaftaran ditutup</p> --}}
+                                @if ($event["status"] == "Buka")
+                                    <p class="text-hijau mb-0">Tersedia</p>
+                                @else
+                                    <p class="text-danger mb-0">Tidak Tersedia/p>
+                                @endif
                             </div>
                             <div class="boxx-title fw-bold">
-                                <p>21st-Century Digital Educator (Guru Digital Abad 21)</p>
+                                <p>{{ $event['tittle'] }}</p>
                             </div>
                             <div class="boxx-events d-flex">
                                 <i class='bx bx-calendar-alt fs-4 text-dark'></i>
-                                <p class="text-dark">Magang</p>
+                                <p class="text-dark">{{ $event['type'] }}</p>
                             </div>
                             <div class="boxx-location d-flex">
                                 <i class='bx bx-building-house fs-4 text-dark'></i>
-                                <p class="text-dark">21st-Century Digital Educator (Guru Digital Abad 21)</p>
+                                <p class="text-dark">{{ $event['location'] }}</p>
                             </div>
                             <div class="boxx-city d-flex">
                                 <i class='bx bx-map fs-4'></i>
-                                <p>Jakarta</p>
+                                <p>{{ $event['city'] }}</p>
                             </div>
                             <div class="boxx-actions d-flex mb-3">
                                 <a href="{{ route("updateMyEventOrganisasi") }}" class="btn btn-outline-dark d-flex align-items-center me-3">
@@ -119,20 +100,20 @@
                                 <div class="boxx-description">
                                     <p class="fs-5 fw-bold">Deksripsi Kegiatan</p>
                                     <p class="deskripsi">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                        {{ $event['deskripsi'] }}
                                     </p>
                                 </div>
                                 <div class="boxx-details">
                                     <p class="fs-5 fw-bold">Rincian Kegiatan</p>
                                     <ol class="rincian" type="1">
-                                        <li>blblblblblblbl</li>
-                                        <li>blblblblblblbl</li>
-                                        <li>blblblblblblbl</li>
-                                        <li>blblblblblblbl</li>
+                                        @foreach(explode(',',$event['rincian']) as $pp)
+                                            <li>{{ $pp }}</li>
+                                        @endforeach
                                     </ol>
                                 </div>
                             </div>
                         </div>
+                        @endforeach
                     </div>
                     <div class="col-md-3 boxTiga d-none">
                         <div class="boxxx border border-dark rounded-4 p-3">
