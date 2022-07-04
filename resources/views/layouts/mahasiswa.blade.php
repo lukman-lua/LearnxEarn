@@ -39,15 +39,22 @@
                     <ul class="navbar-nav mb-2 mb-lg-0 mt-0">
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <img src={{ url("images/login-1.png") }} alt="" class="boxxx-img border border-dark me-1">
+                                @if($user->profile_pict)
+                                <img src={{ \Illuminate\Support\Facades\Storage::url($user->profile_pict) }} alt="" class="boxxx-img border border-dark">
+                                @else
+                                    <img src={{ url("images/login-1.png") }} alt="" class="boxxx-img border border-dark me-1">
+                                @endif
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href={{ route("mahasiswa") }}>Beranda</a></li>
-                                <li><a class="dropdown-item" href={{ route("profilMahasiswa") }}>Profil saya</a></li>
-                                <li><a class="dropdown-item" href={{ route("myproyekMahasiswa") }}>Proyek saya</a></li>
+                                <li><a class="dropdown-item" href="{{ route("dashboard.index") }}">Dashboard</a></li>
+                                <li><a class="dropdown-item" href="{{ route("profileView") }}">Profil saya</a></li>
+                                <li><a class="dropdown-item" href="{{ route("my_projectView") }}">Proyek saya</a></li>
+                                @if($user->role==1)
+                                    <li><a class="dropdown-item" href="{{ route("my_eventView") }}">Kegiatan saya</a></li>
+                                @endif
                                 <li><a class="dropdown-item" href="#">Kegiatan yang disimpan</a></li>
                                 <li><hr class="dropdown-divider"></li>
-                                <li><a class="dropdown-item" href="#">Keluar</a></li>
+                                <li><a class="dropdown-item" href="{{ route('logout') }}">Keluar</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -62,5 +69,17 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
         {{-- Icon --}}
         <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
+
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+        <script>
+            @if(session("status"))
+                @if(session("status") =="true")
+                    swal("Success", "{{ session("message") }}", "success");
+                @elseif(session("status"))
+                    swal("Failed", "{{ session("message") }}", "error");
+                @endif
+            @endif
+
+        </script>
     </body>
 </html>

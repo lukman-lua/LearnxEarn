@@ -42,12 +42,15 @@
                                 <i class='bx bx-user-circle fs-4'></i>
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="{{ route("organisasi") }}">Beranda</a></li>
-                                <li><a class="dropdown-item" href="{{ route("profilOrganisasi") }}">Profil Organisasi</a></li>
-                                <li><a class="dropdown-item" href="{{ route("myEventOrganisasi") }}">Kegiatan Organisasi</a></li>
+                                <li><a class="dropdown-item" href="{{ route("dashboard.index") }}">Beranda</a></li>
+                                <li><a class="dropdown-item" href="{{ route("profileView") }}">Profil saya</a></li>
+                                <li><a class="dropdown-item" href="{{ route("my_projectView") }}">Proyek saya</a></li>
+                                @if($user->role==1)
+                                    <li><a class="dropdown-item" href="{{ route("my_eventView") }}">Kegiatan saya</a></li>
+                                @endif
                                 <li><a class="dropdown-item" href="#">Kegiatan yang disimpan</a></li>
                                 <li><hr class="dropdown-divider"></li>
-                                <li><a class="dropdown-item" href="#">Keluar</a></li>
+                                <li><a class="dropdown-item" href="{{ route("logout") }}">Keluar</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -63,5 +66,16 @@
 
         {{-- Icon --}}
         <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+        <script>
+            @if(session("status"))
+                @if(session("status") =="true")
+                    swal("Success", "{{ session("message") }}", "success");
+                @elseif(session("status"))
+                    swal("Failed", "{{ session("message") }}", "error");
+                @endif
+            @endif
+
+        </script>
     </body>
 </html>

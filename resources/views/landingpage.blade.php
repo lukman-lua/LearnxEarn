@@ -9,7 +9,7 @@
                     <div class="col-md-6">
                         <p class="fs-2 fw-normal">Temukan kegiatanmu dengan cepat, tepat, dan praktis!</p>
                         <p class="fs-6 fw-normal">Learn x Earn adalah platform untuk mahasiswa untuk memudahkan kamu mencari informasi seputar kegiatan seperti magang, kepanitiaan, dan sebagainya.</p>
-                        <a href="{{ route("mahasiswa") }}" class="btn btn btn-dark section-1-btn px-3">Telusuri Kegiatan</a>
+                        <a href="{{ route("dashboard.index") }}" class="btn btn btn-dark section-1-btn px-3">Telusuri Kegiatan</a>
                     </div>
                     <div class="col-md-6">
                         <img src={{ url("images/section-1.png") }} alt="" class="img-fluid">
@@ -27,27 +27,27 @@
                     <p class="text-center fs-3 fw-bold">Kegiatan yang tersedia</p>
                 </div>
                 <div class="row justify-content-center">
-                    <a href="" class="col-md-1-setengah border mx-2 d-flex flex-column align-items-center justify-content-center text-decoration-none text-dark">
+                    <a href="{{ route("dashboard.index") }}" class="col-md-1-setengah border mx-2 d-flex flex-column align-items-center justify-content-center text-decoration-none text-dark">
                         <span class="iconify display-1 d-block" data-icon="fluent:organization-12-filled"></span>
                         <p>Organisasi</p>
                     </a>
-                    <a href="" class="col-md-1-setengah border mx-2 d-flex flex-column align-items-center justify-content-center text-decoration-none text-dark">
+                    <a href="{{ route("dashboard.index") }}" class="col-md-1-setengah border mx-2 d-flex flex-column align-items-center justify-content-center text-decoration-none text-dark">
                         <span class="iconify display-1 d-block" data-icon="material-symbols:home-work"></span>
                         <p>Magang</p>
                     </a>
-                    <a href="" class="col-md-1-setengah border mx-2 d-flex flex-column align-items-center justify-content-center text-decoration-none text-dark">
+                    <a href="{{ route("dashboard.index") }}" class="col-md-1-setengah border mx-2 d-flex flex-column align-items-center justify-content-center text-decoration-none text-dark">
                         <span class="iconify display-1 d-block" data-icon="ic:baseline-volunteer-activism"></span>
                         <p>Volunteer</p>
                     </a>
-                    <a href="" class="col-md-1-setengah border mx-2 d-flex flex-column align-items-center justify-content-center text-decoration-none text-dark">
+                    <a href="{{ route("dashboard.index") }}" class="col-md-1-setengah border mx-2 d-flex flex-column align-items-center justify-content-center text-decoration-none text-dark">
                         <span class="iconify display-1 d-block" data-icon="fa-solid:project-diagram"></span>
                         <p>Proyek</p>
                     </a>
-                    <a href="" class="col-md-1-setengah border mx-2 d-flex flex-column align-items-center justify-content-center text-decoration-none text-dark">
+                    <a href="{{ route("dashboard.index") }}" class="col-md-1-setengah border mx-2 d-flex flex-column align-items-center justify-content-center text-decoration-none text-dark">
                         <span class="iconify display-1 d-block" data-icon="fa6-solid:school-flag"></span>
                         <p>Beasiswa</p>
                     </a>
-                    <a href="" class="col-md-1-setengah border mx-2 d-flex flex-column align-items-center justify-content-center text-decoration-none text-dark">
+                    <a href={{ route("dashboard.index") }}"" class="col-md-1-setengah border mx-2 d-flex flex-column align-items-center justify-content-center text-decoration-none text-dark">
                         <span class="iconify display-1 d-block" data-icon="ic:round-work-history"></span>
                         Kerja Paruh Waktu
                     </a>
@@ -76,7 +76,9 @@
                                     {{-- <p class="text-danger mb-0">Pendaftaran ditutup</p> --}}
                                 </div>
                                 <div class="box-title">
-                                    <p class="fw-bold text-dark">21st-Century Digital Educator (Guru Digital Abad 21)</p>
+                                    <a href="{{ route("dashboard.index") }}">
+                                        <p class="fw-bold text-dark">21st-Century Digital Educator (Guru Digital Abad 21)</p>
+                                    </a>
                                 </div>
                                 <div class="d-flex align-items-center box-events">
                                     <i class='bx bx-calendar-alt fs-4 text-dark'></i>
@@ -121,9 +123,11 @@
                                     {{-- Tutup --}}
                                     {{-- <p class="text-danger mb-0">Tidak Tersedia/p> --}}
                                 </div>
-                                <div class="box-title fw-bold text-dark">
-                                    <p>Tanaman hidroponik berbasis IoT</p>
-                                </div>
+                                <a href="{{ route("dashboard.index") }}#projects">
+                                    <div class="box-title fw-bold text-dark">
+                                        <p>Tanaman hidroponik berbasis IoT</p>
+                                    </div>
+                                </a>
                                 <div class="box-body">
                                     <div class="events d-flex">
                                         <i class='bx bx-user-circle fs-4 text-dark'></i>

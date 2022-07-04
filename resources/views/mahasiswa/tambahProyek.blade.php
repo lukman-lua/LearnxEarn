@@ -7,51 +7,74 @@
                 <p class="fs-3 text-center">TAMBAH PROYEK</p>
                 <div class="row justify-content-center">
                     <div class="col-md-7">
-                        <form action="" method="">
+                        <form action="{{ route("add_project") }}" method="post">
                             @csrf
                             <div class="mb-3">
                                 <label for="Nama proyek" class="form-label">Nama proyek</label>
-                                <input type="text" class="form-control" name="" id="Nama proyek" placeholder="Nama proyek">
+                                <input required type="text" class="form-control" name="tittle" id="Nama proyek" placeholder="Nama proyek">
+                                @error('tittle')
+                                    <div class="alert alert-danger">{{ $message }}</div>
+                                @enderror
                             </div>
                             <div class="mb-3">
                                 <label for="Bidang proyek" class="form-label">Bidang proyek</label>
-                                <input type="text" class="form-control" name="" id="Bidang proyek" placeholder="Bidang proyek">
+                                <input required type="text" class="form-control" name="type" id="Bidang proyek" placeholder="Bidang proyek">
+                                @error('type')
+                                    <div class="alert alert-danger">{{ $message }}</div>
+                                @enderror
                             </div>
                             <div class="mb-3">
                                 <label for="Lokasi proyek" class="form-label">Lokasi proyek</label>
-                                <input type="text" class="form-control" name="" id="Lokasi proyek" placeholder="Lokasi proyek">
+                                <input required type="text" class="form-control" name="location" id="Lokasi proyek" placeholder="Lokasi proyek">
+                                @error('location')
+                                    <div class="alert alert-danger">{{ $message }}</div>
+                                @enderror
                             </div>
                             <div class="mb-3">
                                 <label for="Status kegiatan" class="form-label">Status kegiatan</label>
-                                <select name="" id="" class="form-control">
-                                    <option selected>Status kegiatan</option>
+                                <select required name="status" id="" class="form-control">
                                     <option value="Buka">Buka</option>
                                     <option value="Tutup">Tutup</option>
                                 </select>
+                                @error('status')
+                                    <div class="alert alert-danger">{{ $message }}</div>
+                                @enderror
                             </div>
                             <div class="mb-3">
                                 <label for="No Telp/ Whatsapp" class="form-label">No Telp/ Whatsapp</label>
-                                <input type="text" class="form-control" name="" id="No Telp/ Whatsapp" placeholder="No Telp/ Whatsapp">
+                                <input required type="text" class="form-control" name="contact" id="No Telp/ Whatsapp" placeholder="No Telp/ Whatsapp">
+                                @error('contact')
+                                    <div class="alert alert-danger">{{ $message }}</div>
+                                @enderror
                             </div>
                             <div class="mb-3">
                                 <label for="Deksripsi kegiatan" class="form-label">Deksripsi kegiatan</label>
-                                <textarea type="text" class="form-control" name="" id="Deksripsi kegiatan" placeholder="Deksripsi kegiatan"></textarea>
+                                <textarea required type="text" class="form-control" name="deskripsi" id="Deksripsi kegiatan" placeholder="Deksripsi kegiatan"></textarea>
+                                @error('deskripsi')
+                                    <div class="alert alert-danger">{{ $message }}</div>
+                                @enderror
                             </div>
                             <div class="mb-3">
                                 <label for="Rincian kegiatan" class="form-label">Rincian kegiatan</label>
                                 <div class="d-flex d-rincian"></div>
                                 <div class="input-group ">
                                     <input type="text" class="form-control input-rincian">
+                                    @error('rincian')
+                                        <div class="alert alert-danger">{{ $message }}</div>
+                                    @enderror
                                     <span class="input-group-text border-dark btn-add-rincian">
                                         <i class='bx bx-plus fs-4'></i>
                                     </span>
                                 </div>
-                                <input type="text" class="form-control rincian" name="" id="Rincian kegiatan" placeholder="Rincian kegiatan" hidden>
+                                <input required type="text" class="form-control rincian" name="rincian" id="Rincian kegiatan" placeholder="Rincian kegiatan" hidden>
                                 <small>Tekan kembali rincian, jika ada salah</small>
                             </div>
                             <div class="mb-3">
                                 <label for="Link Detail Kegiatan" class="form-label">Link Detail Kegiatan</label>
-                                <input type="text" class="form-control" name="" id="Link Detail Kegiatan" placeholder="Link pendaftaran">
+                                <input required type="text" class="form-control" name="link_detail" id="Link Detail Kegiatan" placeholder="Link pendaftaran">
+                                @error('link_detail')
+                                    <div class="alert alert-danger">{{ $message }}</div>
+                                @enderror
                             </div>
                             <div class="mb-3">
                                 <button type="submit" class="btn btn-dark">Simpan</button>

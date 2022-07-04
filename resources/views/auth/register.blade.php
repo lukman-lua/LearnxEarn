@@ -10,30 +10,48 @@
                     </div>
                     <div class="col-md-5">
                         <h3 class="text-center">Daftar akun Learn X Earn</h3>
-                        <form action="" method="">
+
+                        @if(session("status"))
+                            <div class="alert alert-danger">{{ session('message') }}</div>
+                        @endif
+
+                        <form method="post" action="{{ route("register") }}">
+                            @csrf
+
                             <div class="mb-3">
                                 <label for="email" class="form-label">Email</label>
-                                <input type="text" class="form-control" name="" id="email" placeholder="Email">
+                                <input required type="email" class="form-control" name="email" value="{{ old('email') }}" id="email" placeholder="Email">
+                                @error('email')
+                                    <div class="alert alert-danger">{{ $message }}</div>
+                                @enderror
                             </div>
                             <div class="mb-3">
                                 <label for="role" class="form-label">Role</label>
-                                <select class="form-select" name="" id="">
-                                    <option selected>Pilih role kamu</option>
+                                <select required class="form-select" name="role" id="">
                                     <option value="0">Mahasiswa</option>
                                     <option value="1">Organisasi</option>
                                 </select>
+                                @error('role')
+                                    <div class="alert alert-danger">{{ $message }}</div>
+                                @enderror
                             </div>
                             <div class="mb-3">
                                 <label for="password" class="form-label">Password</label>
                                 <div class="position-relative">
-                                    <input type="password" class="form-control mata2Input" name="" id="password" placeholder="Password">
+                                    <input required type="password" class="form-control mata2Input" name="password" id="password" placeholder="Password">
+                                    @error('password')
+                                        <div class="alert alert-danger">{{ $message }}</div>
+                                    @enderror
                                     <i class="bx bx-show position-absolute top-50 end-0 translate-middle fs-4 mata2"></i>
                                 </div>
                             </div>
                             <div class="mb-3">
                                 <label for="password" class="form-label">Konfirmasi Password</label>
                                 <div class="position-relative">
-                                    <input type="password" class="form-control mata3Input" name="" id="password" placeholder="Konfirmasi password">
+                                    <input required type="password" class="form-control mata3Input" name="re-password" id="password" placeholder="Konfirmasi password">
+                                    @error('re-password')
+                                        <div class="alert alert-danger">{{ $message }}</div>
+                                    @enderror
                                     <i class="bx bx-show position-absolute top-50 end-0 translate-middle fs-4 mata3"></i>
                                 </div>
                             </div>

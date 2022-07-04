@@ -14,9 +14,15 @@ return new class extends Migration
     public function up()
     {
         Schema::create('users', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->string('email')->unique();
+            $table->id("id_user");
+            $table->string('name', 50)->default("");
+            $table->string('email', 50)->unique();
+            $table->integer('role');
+            $table->string('second', 50)->default("");
+            $table->string('colab_project', 300)->default("[]");
+            $table->string('saved', 300)->default("[]");
+            $table->boolean('profile_requirements')->default(false);
+            $table->string('profile_pict')->default("");
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();

@@ -7,58 +7,84 @@
                 <p class="fs-3 text-center">TAMBAH KEGIATAN</p>
                 <div class="row justify-content-center">
                     <div class="col-md-7">
-                        <form action="" method="">
+                        <form action="{{ route("add_event") }}" method="post">
                             @csrf
                             <div class="mb-3">
                                 <label for="Nama kegiatan" class="form-label">Nama kegiatan</label>
-                                <input type="text" class="form-control" name="" id="Nama kegiatan" placeholder="Nama kegiatan">
+                                <input required type="text" class="form-control" name="tittle" id="Nama kegiatan" placeholder="Nama kegiatan">
+                                @error('tittle')
+                                    <div class="alert alert-danger">{{ $message }}</div>
+                                @enderror
                             </div>
                             <div class="mb-3">
                                 <label for="Jenis kegiatan" class="form-label">Jenis kegiatan</label>
-                                <select name="" id="" class="form-control">
-                                    <option selected>Jenis kegiatan</option>
+                                <select required name="type" id="" class="form-control">
                                     <option value="Magang">Magang</option>
                                     <option value="Proyek">Proyek</option>
                                     <option value="Beasiswa">Beasiswa</option>
+                                    <option value="Seminar">Seminar</option>
+                                    <option value="Workshop">Workshop</option>
+                                    <option value="Kepanitiaan">Kepanitiaan</option>
                                     <option value="Volunteer">Volunteer</option>
                                     <option value="Kerja Paruh Waktu">Kerja Paruh Waktu</option>
                                 </select>
                             </div>
                             <div class="mb-3">
                                 <label for="Lokasi kegiatan" class="form-label">Lokasi kegiatan</label>
-                                <input type="text" class="form-control" name="" id="Lokasi kegiatan" placeholder="Lokasi kegiatan">
+                                <input required type="text" class="form-control" name="location" id="Lokasi kegiatan" placeholder="Lokasi kegiatan">
+                                @error('location')
+                                    <div class="alert alert-danger">{{ $message }}</div>
+                                @enderror
+                            </div>
+                            <div class="mb-3">
+                                <label for="Kota" class="form-label">Kota</label>
+                                <input required type="text" class="form-control" name="city" id="Lokasi kegiatan" placeholder="Lokasi kegiatan">
+                                @error('city')
+                                    <div class="alert alert-danger">{{ $message }}</div>
+                                @enderror
                             </div>
                             <div class="mb-3">
                                 <label for="Status kegiatan" class="form-label">Status kegiatan</label>
-                                <select name="" id="" class="form-control">
-                                    <option selected>Status kegiatan</option>
+                                <select required name="status" id="" class="form-control">
                                     <option value="Buka">Buka</option>
                                     <option value="Tutup">Tutup</option>
                                 </select>
                             </div>
                             <div class="mb-3">
                                 <label for="Deksripsi kegiatan" class="form-label">Deksripsi kegiatan</label>
-                                <textarea type="text" class="form-control" name="" id="Deksripsi kegiatan" placeholder="Deksripsi kegiatan"></textarea>
+                                <textarea required type="text" class="form-control" name="deskripsi" id="Deksripsi kegiatan" placeholder="Deksripsi kegiatan"></textarea>
+                                @error('deskripsi')
+                                    <div class="alert alert-danger">{{ $message }}</div>
+                                @enderror
                             </div>
                             <div class="mb-3">
                                 <label for="Rincian kegiatan" class="form-label">Rincian kegiatan</label>
                                 <div class="d-flex d-rincian"></div>
                                 <div class="input-group ">
                                     <input type="text" class="form-control input-rincian">
+                                    @error('rincian')
+                                        <div class="alert alert-danger">{{ $message }}</div>
+                                    @enderror
                                     <span class="input-group-text border-dark btn-add-rincian">
                                         <i class='bx bx-plus fs-4'></i>
                                     </span>
                                 </div>
-                                <input type="text" class="form-control rincian" name="" id="Rincian kegiatan" placeholder="Rincian kegiatan" hidden>
+                                <input required type="text" class="form-control rincian" name="rincian" id="Rincian kegiatan" placeholder="Rincian kegiatan" hidden>
                                 <small>Tekan kembali rincian, jika ada salah</small>
                             </div>
                             <div class="mb-3">
                                 <label for="Link pendaftaran" class="form-label">Link pendaftaran</label>
-                                <input type="text" class="form-control" name="" id="Link pendaftaran" placeholder="Link pendaftaran">
+                                <input required type="text" class="form-control" name="link_register" id="Link pendaftaran" placeholder="Link pendaftaran">
+                                @error('link_register')
+                                    <div class="alert alert-danger">{{ $message }}</div>
+                                @enderror
                             </div>
                             <div class="mb-3">
                                 <label for="Link Detail Kegiatan" class="form-label">Link Detail Kegiatan</label>
-                                <input type="text" class="form-control" name="" id="Link Detail Kegiatan" placeholder="Link pendaftaran">
+                                <input required type="text" class="form-control" name="link_detail" id="Link Detail Kegiatan" placeholder="Link pendaftaran">
+                                @error('link_detail')
+                                    <div class="alert alert-danger">{{ $message }}</div>
+                                @enderror
                             </div>
                             <div class="mb-3">
                                 <button type="submit" class="btn btn-dark">Simpan</button>

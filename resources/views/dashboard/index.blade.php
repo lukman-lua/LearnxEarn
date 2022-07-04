@@ -1,4 +1,4 @@
-@extends("layouts.organisasi")
+@extends("layouts.mahasiswa")
 @section("content")
         @php
             
